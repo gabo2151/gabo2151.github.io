@@ -1,0 +1,80 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>Encuestacion</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<SCRIPT LANGUAJE="JavaScript" src="meinTest.js" charset="UTF-8"></SCRIPT>
+	</head>
+	<style type="text/css">
+		table{
+			background-color: #7ce800;
+			border-radius: 0px 16px 16px 0px;
+			-moz-border-radius: 0px 16px 16px 0px;
+			-webkit-border-radius: 0px 16px 16px 0px;
+			border: 5px double #000000;
+		}
+	</style>
+	<BODY BGCOLOR="#292929">
+		<H1><font color="#7ce800">¿Pasarás tus ramos?</font></H1>
+		<form name="test">
+			<table>
+				<tr>
+					<td>
+			1.-¿Has estudiado?<BR>
+			<input type="radio" name="preg1" value="A" onclick="resp1('A')">Si<BR>
+			<input type="radio" name="preg1" value="B" onclick="resp1('B')">No<BR>
+			<input type="radio" name="preg1" value="c" onclick="resp1('C')">Un poco...<BR>
+					</td>
+				</tr>
+			</table>
+			<table>
+				<tr>
+					<td>
+			2.-Che vos, ¿cuántos rojos tenés?<BR>
+			<input type="radio" name="preg2" value="A" onclick="resp2('A')">0 <BR>
+			<input type="radio" name="preg2" value="B" onclick="resp2('B')">1-3<BR>
+			<input type="radio" name="preg2" value="C" onclick="resp2('C')">+4 :c<BR>
+					</td>
+				</tr>
+			</table>
+			<table>
+				<tr>
+					<td>
+			3.-¿Has visto la biblioteca por dentro?<BR>
+			<input type="radio" name="preg3" value="A" onclick="resp3('A')">Si, he estudiado ahí<BR>
+			<input type="radio" name="preg3" value="B" onclick="resp3('B')">Si, he pasado por dentro a mirar los libros...<BR>
+			<input type="radio" name="preg3" value="C" onclick="resp3('C')">¿Biblioteca?<BR>
+					</td>
+				</tr>
+			</table>
+			<table>
+				<tr>
+					<td>
+			4.-¿Te motiva estudiar?<BR>
+			<input type="radio" name="preg4" value="A" onclick="resp4('A')">Si<BR>
+			<input type="radio" name="preg4" value="B" onclick="resp4('B')">No mucho<BR>
+			<input type="radio" name="preg4" value="C" onclick="resp4('C')">Emmm... ¿qué se teje el viernes? 1313<BR>
+					</td>
+				</tr>
+			</table>
+			<table>
+				<tr>
+					<td>
+			5.-¿Se te da la carrera?<BR>
+			<input type="radio" name="preg5" value="A" onclick="resp5('A')">Esto es lo mio<BR>
+			<input type="radio" name="preg5" value="B" onclick="resp5('B')">Si, me gusta<BR>
+			<input type="radio" name="preg5" value="C" onclick="resp5('C')">Me quiero cambiar<BR>
+					</td>
+				</tr>
+			</table>
+			<table>
+				<tr>
+					<td>
+			<input type="submit" name="algo" value="Resultado" onclick=evaluar()>
+					</td>
+				</tr>
+			</table>
+		</form>
+		<p id="demo"><p>
+	</body>
+</html>
