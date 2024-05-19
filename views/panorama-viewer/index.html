@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Gabo Pano Viewer</title>
+    <link rel="stylesheet" href="../../src/css/global.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/core/index.min.css" />
+</head>
+<body>
+<div id="viewer" class="panorama-viewer"></div>
+<script type="importmap">
+    {
+        "imports": {
+            "three": "https://cdn.jsdelivr.net/npm/three/build/three.module.js",
+            "@photo-sphere-viewer/core": "https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/core/index.module.js"
+        }
+    }
+</script>
+<script type="module">
+    import { Viewer } from '@photo-sphere-viewer/core';
+
+    const viewer = new Viewer({
+        container: document.querySelector('#viewer'),
+        panorama: '../../assets/img/panorama.jpg',
+    });
+</script>
+</body>
+</html>
