@@ -1,12 +1,25 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-	<title>Gabriel Galilea</title>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-	<link rel="stylesheet" href="assets/scss/global.scss" />
+    <title>Gabriel Galilea</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="src/css/global.css" />
+    <script type="text/javascript" src="src/js/vue.min.js"></script>
 </head>
 <body>
-Chao template
+<div id="homepage">
+    <h1 class="text-align-center">Year {{ year }} and still nothing</h1>
+</div>
+<script>
+    new Vue({
+        el: '#homepage',
+        data: {
+            year: new Date().getFullYear(),
+        },
+        methods: {},
+        mounted: () => {},
+    });
+</script>
 </body>
 </html>
