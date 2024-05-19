@@ -5,11 +5,13 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="src/css/global.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/core/index.min.css" />
     <script type="text/javascript" src="src/js/vue.min.js"></script>
 </head>
 <body>
 <div id="homepage">
     <h1 class="text-align-center">Year {{ year }} and still nothing</h1>
+    <div id="viewer" style="width: 100vw; height: 100vh;"></div>
 </div>
 <script>
     new Vue({
@@ -19,6 +21,22 @@
         },
         methods: {},
         mounted: () => {},
+    });
+</script>
+<script type="importmap">
+    {
+        "imports": {
+            "three": "https://cdn.jsdelivr.net/npm/three/build/three.module.js",
+            "@photo-sphere-viewer/core": "https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/core/index.module.js"
+        }
+    }
+</script>
+<script type="module">
+    import { Viewer } from '@photo-sphere-viewer/core';
+
+    const viewer = new Viewer({
+        container: document.querySelector('#viewer'),
+        panorama: 'assets/img/panorama.jpg',
     });
 </script>
 </body>
