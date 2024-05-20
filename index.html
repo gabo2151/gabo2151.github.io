@@ -1,15 +1,45 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="en">
 <head>
     <title>Gabriel Galilea</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="src/css/global.css" />
-    <script type="module">import App from "./app.js";App.mount('#app');</script>
+    <script type="module">
+        // import { createApp } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js';
+        // import { createApp } from './src/js/vue.esm-browser.js';
+        import { createApp } from './src/js/vue.esm-browser.prod.js';
+        import HomePage from './src/views/HomePage.js';
+        import HtmlPageViewer from './src/views/HtmlPageViewer.js';
+
+        const app = createApp({
+            data() {
+                /** @type {IframePage[]} */
+                const iframeList = [
+                    { name: 'Yay!', link: 'yay/index.html' },
+                    { name: 'UACh - Taller grupal - Animación JS', link: 'UACh/taller-TG_animacionJS/crateGroupRC.html' },
+                    { name: 'UACh - Taller grupal - Mapeo', link: 'UACh/taller-TG_mapeo/peliculas.html' },
+                    { name: 'UACh - Taller individual - Test', link: 'UACh/taller-TI_test/index.html' },
+                ];
+
+                return {
+                    year: new Date().getFullYear(),
+                    /** @type {IframePage} */
+                    iframeSelected: iframeList[Math.trunc(Math.random() * 5)],
+                };
+            },
+            components: {
+                HomePage,
+                HtmlPageViewer,
+            },
+        });
+
+        app.mount('#app');
+    </script>
 </head>
 <body>
 <div id="app">
-    <home-page v-if="false" :year="year"></home-page>
+    <home-page :year="year"></home-page>
     <html-page-viewer :webpage="iframeSelected"></html-page-viewer>
 </div>
 </body>
