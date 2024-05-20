@@ -5,23 +5,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="src/css/global.css" />
-<script type="module">
-// import { createApp } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js';
-import { createApp } from './src/js/vue.esm-browser.js';
-import HomePage from './src/views/HomePage.js';
-
-const app = createApp({
-  components: {
-    HomePage,
-  },
-});
-
-app.mount('#app');
-</script>
+    <script type="module">import App from "./app.js";App.mount('#app');</script>
 </head>
 <body>
 <div id="app">
-    <home-page></home-page>
+    <home-page v-if="false" :year="year"></home-page>
+    <html-page-viewer :webpage="iframeSelected"></html-page-viewer>
 </div>
 </body>
 </html>
